@@ -1,10 +1,3 @@
-//--------------------------------------------------------------------
-// Author: Bhimreddy B Y (201EC170)
-// Date: October 5st, 2023
-// Module Name: fisqr
-// Module Description: Implements the custom 27-bit floating point
-//                     inverse square root calculator.
-//--------------------------------------------------------------------
 
 module fisqr
   ( input i_clk, i_rst,

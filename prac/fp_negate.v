@@ -1,11 +1,3 @@
-//--------------------------------------------------------------------
-//
-// Author:      Omkar Girish Kamath
-// Module:      fp_negate
-// Date:        Oct 21st, 2023
-// Description: Input is a 27 bit custom floating point number and
-//              module output is the negative of the input
-//--------------------------------------------------------------------
 module fp_negate (
                   in,
                   neg_out

@@ -1,12 +1,3 @@
-//--------------------------------------------------------------------
-// Author: Omkar Girish Kamath (201EC140)
-// Date: October 1st, 2023
-// Module Name: FpAdd
-// Module Description: Implements the custom 27-bit floating point
-//                     adder where MSB is sign bit, next 8-bits are
-//                     exponent in excess 127 and last 18-bits are ma-
-//                     ntissa.
-//--------------------------------------------------------------------
 
 `define SIGN 26
 `define EXP 25:18

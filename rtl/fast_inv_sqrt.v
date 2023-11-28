@@ -1,11 +1,3 @@
-//--------------------------------------------------------------------
-// Author: Bhimreddy B Y (201EC170)
-// Date: October 5st, 2023
-// Module Name: fast_inv_sqrt
-// Module Description: Implements the custom 27-bit floating point
-//                     inverse square root calculator.
-//--------------------------------------------------------------------
-
 module fast_inv_sqrt
 ( input i_clk, i_rst,
   input [26:0] i_x,
@@ -20,18 +12,18 @@ assign w_sign = i_x[26];
 assign w_exponent = i_x[25:18];
 assign w_mantissa = i_x[17:0];
 
-reg [26:0] r_s12_a, r_s12_b, r_s12_c; // r_s12_a --> 'a' feild pipeline register between stage 1 and 2 
+reg [26:0] r_s12_a, r_s12_b, r_s12_c; 						// r_s12_a --> 'a' feild pipeline register between stage 1 and 2 
 reg [26:0] r_s23_a, r_s23_b;
 reg [26:0] r_s34_a;
 reg [26:0] r_s45_a, r_s45_b;
 
-wire [26:0] w_s12_a, w_s12_b, w_s12_c; // w_s12_a --> the data on this wire will be assigned to r_s12_a in each clock cycle 
+wire [26:0] w_s12_a, w_s12_b, w_s12_c; 						// w_s12_a --> the data on this wire will be assigned to r_s12_a in each clock cycle 
 wire [26:0] w_s23_a, w_s23_b;
 wire [26:0] w_s34_a;
 wire [26:0] w_s45_a, w_s45_b;
 
-assign w_s12_c = 27'd49920718 - (i_x>>1); //27'd49920718 is a overhead term which also helps in better approximation of log(1+x) as x
-assign w_s12_b = {w_sign, w_exponent-8'd1,w_mantissa}; // divide by 2
+assign w_s12_c = 27'd49920718 - (i_x>>1); 						//27'd49920718 is a overhead term which also helps in better approximation of log(1+x) as x
+assign w_s12_b = {w_sign, w_exponent-8'd1,w_mantissa}; 			// divide by 2
 
 always @(posedge i_clk )
 begin
